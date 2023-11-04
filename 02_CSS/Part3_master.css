@@ -1,0 +1,35 @@
+/*selected tag{
+    property: value;
+}*/
+
+div{
+    color: red;
+}
+
+/* Overwrites the first styling*/
+.firstDiv{
+    color: blue;
+}
+
+#singledout{
+    color: #818107;
+    text-decoration: line-through;
+}
+
+/* Styling for all the webpage. It does not overwrite ID's. Not common to use*/
+/* *{
+    color: black;
+} */
+
+h3 + ul{
+    border: 4px dotted purple;
+}
+
+li a{
+    color: red;
+}
+
+li a[href="www.npr.org"]{
+    color: #0088ff;
+    border: 5px solid orange;
+}

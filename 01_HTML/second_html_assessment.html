@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment test HTML level 2</title>
+</head>
+<body>
+    <h1>Course Sign Up Page</h1>
+    <p>Please note: First name, Last name, Password, and Email are required</p>
+    <form action="https://www.facebook.com" method="get">
+        <label for="1stname">First Name: </label>
+        <input id ="1stname" type="text" placeholder="First Name" required>
+
+        <label for="lastname">Last Name: </label>
+        <input id ="lastname" type="text" placeholder="Last Name" required>
+        <p></p>
+        <label for="email">Email: </label>
+        <input id ="email" type="email" placeholder="name@email.com" required>
+
+        <label for="pass">Password: </label>
+        <input id ="pass" type="password" required>
+
+        <p>Are you over the age of 18?</p>
+        <label for="yes">Yes: </label>
+        <input id ="yes" type="radio" name="age18" value="yes">
+
+        <label for="no">No: </label>
+        <input id ="no" type="radio" name="age18" value="no">
+
+        <p>Do you have a Credit Card or PayPal?</p>
+        <select name="CCorPaypal">
+            <option value="CC">Credit Card</option>
+            <option value="Paypal">Paypal</option>
+        </select>
+        <p></p>
+        <input type="submit" name="Submit" value="Submit feedback">
+    </form>
+</body>
+</html>

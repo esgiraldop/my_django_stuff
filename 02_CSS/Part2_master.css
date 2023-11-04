@@ -1,0 +1,24 @@
+/*selected tag{
+    property: value;
+}*/
+
+body{
+    background: url(https://escales.ponant.com/wp-content/uploads/2020/12/plage.jpg.webp);
+    background-repeat: repeat;
+}
+
+div{
+    background-color: rgba(0, 0, 255, 0.4);
+    border-color: rgba(255, 0, 0, 0.45);
+    border-width: 10px;
+    border-style: dotted;
+}
+
+p{
+    color: rgb(234, 229, 7);
+}
+
+span{
+    background: #c97e0b;
+    color: black;
+}

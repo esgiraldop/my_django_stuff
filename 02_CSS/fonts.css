@@ -1,0 +1,28 @@
+h1{
+    font-family: "Helvetica";
+}
+/*Fonts can also be used from google fonts*/
+
+p{
+    font-family: monospace;
+}
+
+body{
+    font-size:20px;
+}
+
+/*In this case 1em = 20px since it is what i
+defined as default for the body*/
+
+#two{
+    font-size: 2.0em /*This is twice as large as the default font*/
+}
+
+p{
+    font-style: italic;
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+}
