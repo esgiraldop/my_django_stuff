@@ -134,6 +134,77 @@ $('table').on('click', function(event) {
         return [sum1, sum2]
     }
 
+    function scan_1stdiags(){
+        const numRows = board.length;
+        const numCols = board[0].length;
+        const diags_num = numRows + numCols - 1 // Number of diagonals in a matrix
+
+        // Scanning first diagonals
+        for (let diag = 0; diag < diags_num; diag++) {
+            // Defining the starting row of the current diagonal
+            const startRow = Math.min(diag, numRows - 1);
+            // Defining the length of the current diagonal
+            const count = Math.max(0, diag - numRows + 1);
+            sum1=0;
+            sum2=0;
+            for (let i = startRow; i >= count; i--) {
+                const row = i;
+                const col = diag - row;
+                //console.log(`Row ${row} and col ${col}`)
+                if (board[row][col] === 1){
+                    sum1++
+                    sum2=0 // resetting the counter
+                }else if(board[row][col] === 2){
+                    sum2++
+                    sum1=0
+                }else{
+                    sum1=0
+                    sum2=0
+                }
+                if(sum1 === 4 || sum2 === 4){
+                    console.log("1stDIAGONALLY")
+                    return [sum1, sum2]
+                }
+            }
+        }
+        return [sum1, sum2]
+    }
+
+    function scan_2nddiags(){
+        const numRows = board.length;
+        const numCols = board[0].length;
+        const diags_num = numRows + numCols - 1 // Number of diagonals in a matrix
+
+        for (let diag = 0; diag < diags_num; diag++) {
+            const startRow = Math.min(diag, numRows - 1);
+            const count = Math.max(0, diag - numRows + 1);
+            sum1=0;
+            sum2=0;
+
+            for (let i = startRow; i >= count; i--) {
+                const row = i;
+                const col = numCols - 1 - (diag - row);
+                if (col >= 0) {
+                    if (board[row][col] === 1){
+                        sum1++
+                        sum2=0 // resetting the counter
+                    }else if(board[row][col] === 2){
+                        sum2++
+                        sum1=0
+                    }else{
+                        sum1=0
+                        sum2=0
+                    }
+                    if(sum1 === 4 || sum2 === 4){
+                        console.log("2ndDIAGONALLY")
+                        return [sum1, sum2]
+                    }
+                }
+            }
+        }
+        return [sum1, sum2]
+    }
+
     function win_message(){
         var message = ``
         if(sum1 === 4){
@@ -159,6 +230,21 @@ $('table').on('click', function(event) {
         sum1 = sums[0]
         sum2 = sums[1]
     }
+
+    if(sum1 < 4 && sum2 < 4){
+        // If no player has won, then scan all the "first" diagonals
+        sums = scan_1stdiags()
+        sum1 = sums[0]
+        sum2 = sums[1]
+    }
+
+    if(sum1 < 4 && sum2 < 4){
+        // If no player has won, then scan all the diagonals perpendicular to the previous ones
+        sums = scan_2nddiags()
+        sum1 = sums[0]
+        sum2 = sums[1]
+    }
+
     if (sum1 === 4 || sum2 === 4){
         win_message()
     }
