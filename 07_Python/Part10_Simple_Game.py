@@ -94,7 +94,7 @@ def check_nums(pc_guess, usr_guess):
 
 game_on = True
 pc_guess = gen_num()
-print("The pc guess is: ", pc_guess)
+#print("The pc guess is: ", pc_guess)
 while game_on:
     usr_guess = get_input()
     #print(usr_guess)
